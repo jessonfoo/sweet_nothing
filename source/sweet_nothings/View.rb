@@ -1,7 +1,8 @@
 require_relative 'config/application'
 require 'twilio-ruby'
-#puts "Put your application code in #{File.expand_path(__FILE__)}"
+require_relative 'db/seeds'
 
+import
 module View
   extend self
 
@@ -110,18 +111,6 @@ public
     to: "+1#{recipient_phone}",
     body: message
     })
-
-
-
-
-  #User.create(:user_name => user_name, :user_phone => user_phone, :recipient_name => recipient_name,
-  #            :recipient_phone => recipient_phone, :recipient_gender => recipient_gender
-
-  # info_array = [user_name, user_phone, recipient_name, recipient_phone, reciepient_gender]
-  # puts
-  # info_array.each do |item|
-  #   puts item
-  # end
 
   View.sending_message
   View.finish
