@@ -1,7 +1,7 @@
-class GenericMessagesTable < ActiveRecord::Migration
+class MessagesTable < ActiveRecord::Migration
   def change
-    create_table :generic_messages do |table|
-      table.string  :message
+    create_table :messages do |table|
+      table.string  :text
       table.timestamps
     end
   end
