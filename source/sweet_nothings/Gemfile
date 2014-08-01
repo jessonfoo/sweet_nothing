@@ -1,7 +1,0 @@
-source :rubygems
-
-gem 'activerecord', '4.1.4'
-gem 'sqlite3'
-gem 'faker'
-gem 'rspec'
-gem 'twilio-ruby'
