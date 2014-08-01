@@ -11,7 +11,7 @@ APP_NAME = APP_ROOT.basename.to_s
 DB_PATH  = APP_ROOT.join('db', APP_NAME + ".db").to_s
 
 if ENV['DEBUG']
-  ActiveRecord::Base.logger = Logger.new(STDOUT)
+	ActiveRecord::Base.logger = Logger.new(STDOUT)
 end
 
 # Automatically load every file in APP_ROOT/app/models/*.rb, e.g.,
@@ -20,9 +20,9 @@ end
 # See http://www.rubyinside.com/ruby-techniques-revealed-autoload-1652.html
 
 Dir[APP_ROOT.join('app', 'models', '*.rb')].each do |model_file|
-  filename = File.basename(model_file).gsub('.rb', '')
-  autoload ActiveSupport::Inflector.camelize(filename), model_file
+	filename = File.basename(model_file).gsub('.rb', '')
+	autoload ActiveSupport::Inflector.camelize(filename), model_file
 end
 
 ActiveRecord::Base.establish_connection :adapter  => 'sqlite3',
-                                        :database => DB_PATH
+:database => DB_PATH
